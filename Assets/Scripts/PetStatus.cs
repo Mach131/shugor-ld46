@@ -139,4 +139,15 @@ public class PetStatus : MonoBehaviour
         // TODO: loop through secondary conditions
         current_entertainment.on_update();
     }
+
+    public float getHealth()
+    {
+        return this.current_health.getValue();
+    }
+
+    // TODO: Replace with a more general thing later
+    public float getEntertainment()
+    {
+        return this.current_entertainment.getValue();
+    }
 }
