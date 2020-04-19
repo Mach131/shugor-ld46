@@ -9,16 +9,19 @@ using UnityEngine;
 /// </summary>
 public class FoodPileInteraction : MonoBehaviour
 {
-    public Object foodPrefab;
+    public FoodPieceScript foodPrefab;
+    public PetStatus petStatus;
+    public Camera sceneCamera;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public float healthRestoreAmount = 10;
+    public float needinessIncreaseAmount = 10;
 
     // function that gets called when you click on this
     public void attachFoodToCursor()
     {
-        Debug.Log("clicc");
+        GameObject new_food = Instantiate(foodPrefab.gameObject, transform);
+        FoodPieceScript new_food_script = new_food.GetComponent<FoodPieceScript>();
+        new_food_script.Initialize(healthRestoreAmount, needinessIncreaseAmount,
+            petStatus, sceneCamera);
     }
 }
