@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class FoodPieceInteraction : MonoBehaviour
 {
-    private float healthRestoreAmount = 10;
+    private float healthRestoreAmount = 15;
     private float needinessIncreaseAmount = 10;
     private PetStatus petStatus;
     private Collider petColl;

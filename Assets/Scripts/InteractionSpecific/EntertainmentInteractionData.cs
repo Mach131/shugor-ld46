@@ -7,7 +7,7 @@ public class EntertainmentInteractionData : MonoBehaviour, InteractionData
     public BouncingBallInteraction bouncingBall;
 
     private static string condition_name = "Entertainment";
-    private static float value_decay = -4;
+    private static float value_decay = -5;
     private static float value_increase_amount = 20;
     private static float neediness_increase_amount = 25;
 

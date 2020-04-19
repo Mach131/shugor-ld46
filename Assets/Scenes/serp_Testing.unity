@@ -173,6 +173,24 @@ MonoBehaviour:
   releaseFunction:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &320952139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8768245679510924987, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 8768245678721680894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6921304df39e14e9db76a13fcc88be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &477653234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 119359291350476276, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 8768245678721680894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &514496044
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +457,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: needinessToUnlockedInteraction.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: needinessToUnlockedInteractions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: needinessToUnlockedInteractions.Array.data[0].needinessRequirement
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: needinessToUnlockedInteractions.Array.data[1].needinessRequirement
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: interactionManager
+      value: 
+      objectReference: {fileID: 320952139}
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: needinessToUnlockedInteractions.Array.data[0].unlockedInteraction
+      value: 
+      objectReference: {fileID: 477653234}
+    - target: {fileID: 689113768106087935, guid: 157f971f26c9e96449c0e56471f3643f,
+        type: 3}
+      propertyPath: needinessToUnlockedInteractions.Array.data[1].unlockedInteraction
+      value: 
+      objectReference: {fileID: 947016297}
     - target: {fileID: 4235426788012316285, guid: 157f971f26c9e96449c0e56471f3643f,
         type: 3}
       propertyPath: m_LocalPosition.x

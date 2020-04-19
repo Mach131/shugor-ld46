@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4235426788012316285}
   - component: {fileID: 177769935}
+  - component: {fileID: 689113768106087935}
   m_Layer: 0
   m_Name: Pet
   m_TagString: Untagged
@@ -48,10 +49,21 @@ MonoBehaviour:
     condition_value: 0
   current_neediness:
     condition_value: 0
-  current_entertainment:
-    condition_value: 0
   default_hunger_rate: -2
   default_neediness_decay: -0.5
+  current_conditions: []
+--- !u!114 &689113768106087935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675171599150666614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7d5d4ccf124af49966d829c8585e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8011697901843936059
 GameObject:
   m_ObjectHideFlags: 0
