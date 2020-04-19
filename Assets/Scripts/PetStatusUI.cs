@@ -19,7 +19,6 @@ public class PetStatusUI : MonoBehaviour
     void Start()
     {
         this.displayTarget = this.GetComponentInChildren<TextMeshProUGUI>();
-        Debug.Log(this.displayTarget);
     }
 
     // Update is called once per frame

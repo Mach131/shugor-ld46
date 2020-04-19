@@ -9,6 +9,26 @@ using UnityEngine;
 /// </summary>
 public class PetStatus : MonoBehaviour
 {
+    // Stats/conditions
+    [SerializeField]
+    private PetCondition current_health;
+    [SerializeField]
+    private PetCondition current_neediness;
+
+    // TODO: Placeholder condition; will make this more scalable later
+    [SerializeField]
+    private PetCondition current_entertainment;
+
+
+    // Rates of change
+    [SerializeField]
+    private float default_hunger_rate = -2;
+    [SerializeField]
+    private float default_neediness_decay = -0.5f;
+
+    //Constants
+    private static float MAX_HEALTH = 100;
+
     [Serializable]
     /// <summary>
     /// Encapuslates several values that might be relevant to a stat/condition.
@@ -62,12 +82,13 @@ public class PetStatus : MonoBehaviour
             if (this.minimum_value >= 0 && this.condition_value < this.minimum_value)
             {
                 this.condition_value = this.minimum_value;
-            } else if (this.maximum_value >= 0 && this.condition_value > this.maximum_value)
+            }
+            else if (this.maximum_value >= 0 && this.condition_value > this.maximum_value)
             {
                 this.condition_value = this.maximum_value;
             }
         }
-        
+
         // Getters and setters
 
         public float getValue()
@@ -97,25 +118,6 @@ public class PetStatus : MonoBehaviour
         }
     }
 
-    // Stats/conditions
-    [SerializeField]
-    private PetCondition current_health;
-    [SerializeField]
-    private PetCondition current_neediness;
-
-    // TODO: Placeholder condition; will make this more scalable later
-    [SerializeField]
-    private PetCondition current_entertainment;
-
-
-    // Rates of change
-    [SerializeField]
-    private float default_hunger_rate = -2;
-    [SerializeField]
-    private float default_neediness_decay = -0.5f;
-
-    //Constants
-    private float MAX_HEALTH = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -140,14 +142,35 @@ public class PetStatus : MonoBehaviour
         current_entertainment.on_update();
     }
 
+
+    // Getters and setters
+
     public float getHealth()
     {
         return this.current_health.getValue();
     }
+    public void increaseHealth(float bonusHealth)
+    {
+        this.current_health.setValue(getHealth() + bonusHealth);
 
-    // TODO: Replace with a more general thing later
+    }
+
+    public float getNeediness()
+    {
+        return this.current_neediness.getValue();
+    }
+    public void increaseNeediness(float bonusNeediness)
+    {
+        this.current_neediness.setValue(getNeediness() + bonusNeediness);
+    }
+
+    // TODO: Replace with more general things later
     public float getEntertainment()
     {
         return this.current_entertainment.getValue();
+    }
+    public void increaseEntertainment(float bonusEntertainment)
+    {
+        this.current_entertainment.setValue(getEntertainment() + bonusEntertainment);
     }
 }
