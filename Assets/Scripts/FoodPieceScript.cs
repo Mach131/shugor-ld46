@@ -41,24 +41,13 @@ public class FoodPieceScript : MonoBehaviour
     // Called when the mouse button is released
     public void releaseFoodPiece()
     {
-        if (checkPetOverlap())
+        bool checkPetOverlap = Utils.checkOverlap(coll, petColl);
+        if (checkPetOverlap)
         {
             this.petStatus.increaseHealth(healthRestoreAmount);
             this.petStatus.increaseNeediness(needinessIncreaseAmount);
             Debug.Log("yum");
         }
         GameObject.Destroy(gameObject);
-    }
-
-    private bool checkPetOverlap()
-    {
-        Rect petBoundsRect = boundsToRect(petColl.bounds);
-        Rect foodBoundsRect = boundsToRect(coll.bounds);
-        return petBoundsRect.Overlaps(foodBoundsRect);
-    }
-
-    private Rect boundsToRect(Bounds bounds)
-    {
-        return new Rect(bounds.min, bounds.size);
     }
 }
