@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7926997692138656278}
   - component: {fileID: 1813733104919415138}
-  - component: {fileID: 7596797499660363713}
+  - component: {fileID: 5927151836802811809}
   m_Layer: 0
   m_Name: FoodPiece
   m_TagString: Untagged
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6a2b43d8153d7439e88a55843a3c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7596797499660363713
+--- !u!114 &5927151836802811809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3425587827785306291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8a41baf70d867449324ca497784691, type: 3}
+  m_Script: {fileID: 11500000, guid: a4d5782721796e34197910711154ca97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clickFunction:
@@ -169,6 +169,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  initializeAsHeld: 1
 --- !u!1 &7657759900215571469
 GameObject:
   m_ObjectHideFlags: 0

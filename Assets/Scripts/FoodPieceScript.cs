@@ -12,27 +12,15 @@ public class FoodPieceScript : MonoBehaviour
     private float needinessIncreaseAmount = 10;
     private PetStatus petStatus;
     private Collider petColl;
-    private Camera sceneCamera;
 
     private Collider coll;
 
-    private void Update()
-    {
-        if (sceneCamera != null)
-        {
-            Vector3 mousePos = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
-            float z = this.transform.position.z;
-            this.transform.position = new Vector3(mousePos.x, mousePos.y, z);
-        }
-    }
-
     public void Initialize(float healthRestoreAmount, float needinessIncreaseAmount,
-        PetStatus petStatus, Camera sceneCamera)
+        PetStatus petStatus)
     {
         this.healthRestoreAmount = healthRestoreAmount;
         this.needinessIncreaseAmount = needinessIncreaseAmount;
         this.petStatus = petStatus;
-        this.sceneCamera = sceneCamera;
 
         this.petColl = petStatus.GetComponentInChildren<Collider>();
         this.coll = GetComponentInChildren<Collider>();
