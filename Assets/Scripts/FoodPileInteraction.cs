@@ -22,6 +22,6 @@ public class FoodPileInteraction : MonoBehaviour
         GameObject new_food = Instantiate(foodPrefab.gameObject, transform);
         FoodPieceScript new_food_script = new_food.GetComponent<FoodPieceScript>();
         new_food_script.Initialize(healthRestoreAmount, needinessIncreaseAmount,
-            petStatus, sceneCamera);
+            petStatus);
     }
 }

@@ -5,17 +5,15 @@ using UnityEngine.Events;
 
 /// <summary>
 /// A way to mark objects that should respond when clicked on.
-/// Following the design pattern of putting scripts on an empty game object to which
-/// things like colliders are made a child, this assumes that the colliders involved
-/// in click checking are children of the object that this script is attached to.
-/// This assumption mostly comes into play with a script that will be attached to the
-/// camera though.
 /// </summary>
 public class ClickableObject : MonoBehaviour
 {
     public UnityEvent clickFunction;
     public UnityEvent releaseFunction;
 
+    /// <summary>
+    /// Calls the given clickFunction when the object is clicked.
+    /// </summary>
     public void onClick()
     {
         if (clickFunction != null)
@@ -23,7 +21,10 @@ public class ClickableObject : MonoBehaviour
             clickFunction.Invoke();
         }
     }
-
+    
+    /// <summary>
+    /// Calls the given releaseFunction when the mouse is released on the object.
+    /// </summary>
     public void onRelease()
     {
         if (releaseFunction != null)

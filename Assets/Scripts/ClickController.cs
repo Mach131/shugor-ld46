@@ -30,13 +30,17 @@ public class ClickController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            ClickableObject target = hit.transform.GetComponentInParent<ClickableObject>();
-            if (wasButtonDown)
+            ClickableObject clickTarget = hit.transform.GetComponentInParent<ClickableObject>();
+            if (clickTarget != null)
             {
-                target.onClick();
-            } else
-            {
-                target.onRelease();
+                if (wasButtonDown)
+                {
+                    clickTarget.onClick();
+                }
+                else
+                {
+                    clickTarget.onRelease();
+                }
             }
         }
     }
