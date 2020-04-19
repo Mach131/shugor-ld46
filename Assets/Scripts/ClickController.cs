@@ -30,6 +30,20 @@ public class ClickController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            /*
+            DraggableObject dragTarget = hit.transform.GetComponentInParent<DraggableObject>();
+            if (dragTarget != null)
+            {
+                if (wasButtonDown)
+                {
+                    dragTarget.onClick();
+                }
+                else
+                {
+                    dragTarget.onRelease();
+                }
+            }*/
+
             ClickableObject clickTarget = hit.transform.GetComponentInParent<ClickableObject>();
             if (clickTarget != null)
             {

@@ -173,12 +173,6 @@ MonoBehaviour:
   releaseFunction:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &477653234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 119359291350476276, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
-    type: 3}
-  m_PrefabInstance: {fileID: 8768245678721680894}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &514496044
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +265,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &947016297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8058652739715217287, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 8768245678721680894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1284254577
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 4235426788012316285, guid: 157f971f26c9e96449c0e56471f3643f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.74
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: 4235426788012316285, guid: 157f971f26c9e96449c0e56471f3643f,
         type: 3}
@@ -859,6 +859,6 @@ PrefabInstance:
         type: 3}
       propertyPath: testInteractionData
       value: 
-      objectReference: {fileID: 477653234}
+      objectReference: {fileID: 947016297}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f44b1304ab60bb4f8f9a74830d45a90, type: 3}

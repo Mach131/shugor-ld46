@@ -14,7 +14,7 @@ public class ClickableObject : MonoBehaviour
     /// <summary>
     /// Calls the given clickFunction when the object is clicked.
     /// </summary>
-    public void onClick()
+    public virtual void onClick()
     {
         if (clickFunction != null)
         {
@@ -25,7 +25,7 @@ public class ClickableObject : MonoBehaviour
     /// <summary>
     /// Calls the given releaseFunction when the mouse is released on the object.
     /// </summary>
-    public void onRelease()
+    public virtual void onRelease()
     {
         if (releaseFunction != null)
         {

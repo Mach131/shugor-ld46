@@ -9,7 +9,7 @@ using UnityEngine;
 public class DraggableObject : ClickableObject
 {
     public bool initializeAsHeld;
-
+    
     private bool currentlyHeld;
     private Camera sceneCamera;
 
@@ -41,7 +41,7 @@ public class DraggableObject : ClickableObject
     /// <summary>
     /// Calls the given clickFunction when the object is clicked.
     /// </summary>
-    public new void onClick()
+    public override void onClick()
     {
         currentlyHeld = true;
         if (clickFunction != null)
@@ -54,9 +54,18 @@ public class DraggableObject : ClickableObject
     /// This is ignored for draggables, in favor of a function that gets called regardless
     /// of whether this was the object that got clicked.
     /// </summary>
-    public new void onRelease()
+    public override void onRelease()
     {
         return;
+    }
+
+    /// <summary>
+    /// Cancels being held without calling any relevant functions. Useful if
+    /// the onClick function wants to reject something.
+    /// </summary>
+    public void cancelDrag()
+    {
+        currentlyHeld = false;
     }
 
     /// <summary>
