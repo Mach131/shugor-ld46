@@ -115,7 +115,7 @@ public class PetStatus : MonoBehaviour
     private float default_neediness_decay = -0.5f;
 
     //Constants
-    private float MAX_HEALTH = 100;
+    private static float MAX_HEALTH = 100;
 
     // Start is called before the first frame update
     void Start()
