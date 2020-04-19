@@ -15,16 +15,15 @@ public class PetStatus : MonoBehaviour
     [SerializeField]
     private PetCondition current_neediness;
 
-    // TODO: Placeholder condition; will make this more scalable later
-    [SerializeField]
-    private PetCondition current_entertainment;
-
-
     // Rates of change
     [SerializeField]
     private float default_hunger_rate = -2;
     [SerializeField]
     private float default_neediness_decay = -0.5f;
+
+    [SerializeField]
+    private List<PetCondition> current_conditions;
+    private Dictionary<string, int> condition_indices;
 
     //Constants
     private static float MAX_HEALTH = 100;
@@ -79,14 +78,7 @@ public class PetStatus : MonoBehaviour
         public void on_update()
         {
             this.condition_value += this.value_delta();
-            if (this.minimum_value >= 0 && this.condition_value < this.minimum_value)
-            {
-                this.condition_value = this.minimum_value;
-            }
-            else if (this.maximum_value >= 0 && this.condition_value > this.maximum_value)
-            {
-                this.condition_value = this.maximum_value;
-            }
+            this.bindValue();
         }
 
         // Getters and setters
@@ -99,37 +91,65 @@ public class PetStatus : MonoBehaviour
         public void setValue(float new_value)
         {
             this.condition_value = new_value;
+            this.bindValue();
         }
 
-        public void set_minimum(float min_value)
+        public void incrementValue(float value_increment)
+        {
+            this.condition_value += value_increment;
+            this.bindValue();
+        }
+
+        public void setMinimum(float min_value)
         {
             this.minimum_value = min_value;
+            this.bindValue();
         }
 
-        public void set_maximum(float max_value)
+        public void setMaximum(float max_value)
         {
             this.maximum_value = max_value;
+            this.bindValue();
         }
 
-        public void set_bounds(float min_value, float max_value)
+        public void setBounds(float min_value, float max_value)
         {
-            set_minimum(min_value);
-            set_maximum(max_value);
+            setMinimum(min_value);
+            setMaximum(max_value);
+        }
+
+        private void bindValue()
+        {
+            if (this.minimum_value >= 0 && this.condition_value < this.minimum_value)
+            {
+                this.condition_value = this.minimum_value;
+            }
+            else if (this.maximum_value >= 0 && this.condition_value > this.maximum_value)
+            {
+                this.condition_value = this.maximum_value;
+            }
         }
     }
 
+    /* Uncomment this if you want to be able to add conditions in the editor
+    [ContextMenuItem("Add Condition", "debugAddCondition")]
+    public string newDebugConditionName;
+    public void debugAddCondition()
+    {
+        addNewCondition(newDebugConditionName, -1);
+    }
+    */
 
     // Start is called before the first frame update
     void Start()
     {
         current_health = new PetCondition(MAX_HEALTH, default_hunger_rate);
-        current_health.set_bounds(0, MAX_HEALTH);
+        current_health.setBounds(0, MAX_HEALTH);
         current_neediness = new PetCondition(0, default_neediness_decay);
-        current_neediness.set_minimum(0);
+        current_neediness.setMinimum(0);
 
-        // TODO: placeholder
-        current_entertainment = new PetCondition(100, -1);
-        current_entertainment.set_bounds(0, 100);
+        current_conditions = new List<PetCondition>();
+        condition_indices = new Dictionary<string, int>();
     }
 
     // Update is called once per frame
@@ -138,20 +158,68 @@ public class PetStatus : MonoBehaviour
         current_health.on_update();
         current_neediness.on_update();
 
-        // TODO: loop through secondary conditions
-        current_entertainment.on_update();
+        foreach (PetCondition condition in current_conditions)
+        {
+            condition.on_update();
+        }
+    }
+
+    /// <summary>
+    /// Creates a new condition for the pet. It will have a range of 0 to 100, and it
+    /// will start out at 100.
+    /// </summary>
+    /// <param name="condition_name">The name for the condition.</param>
+    /// <param name="value_delta">A function that returns the amount by which the
+    /// value should change between calls to Update, generally used for the
+    /// condition's natural decay.</param>
+    public void addNewCondition(string condition_name, Func<float> value_delta)
+    {
+        if (condition_indices.ContainsKey(condition_name))
+        {
+            Debug.LogWarning("Warning: conditions with repeated names created");
+        }
+
+        PetCondition new_condition = new PetCondition(100, value_delta);
+        new_condition.setBounds(0, 100);
+
+        int new_index = current_conditions.Count;
+        current_conditions.Add(new_condition);
+        condition_indices.Add(condition_name, new_index);
+    }
+
+    /// <summary>
+    /// Creates a new condition for the pet. It will have a range of 0 to 100, and it
+    /// will start out at 100.
+    /// </summary>
+    /// <param name="condition_name">The name for the condition.</param>
+    /// <param name="value_increment">The amount by which the condition's value changes every
+    /// second by default.</param>
+    public void addNewCondition(string condition_name, float value_increment)
+    {
+        addNewCondition(condition_name, () => value_increment * Time.deltaTime);
+    }
+
+    // Helper function to look up the condition object by name
+    private PetCondition getConditionFromString(string condition_name)
+    {
+        if (!condition_indices.ContainsKey(condition_name))
+        {
+            return null;
+        }
+
+        int condition_index = condition_indices[condition_name];
+        return current_conditions[condition_index];
     }
 
 
     // Getters and setters
-
     public float getHealth()
     {
         return this.current_health.getValue();
     }
-    public void increaseHealth(float bonusHealth)
+    public void increaseHealth(float additional_health)
     {
-        this.current_health.setValue(getHealth() + bonusHealth);
+        this.current_health.incrementValue(additional_health);
 
     }
 
@@ -159,18 +227,42 @@ public class PetStatus : MonoBehaviour
     {
         return this.current_neediness.getValue();
     }
-    public void increaseNeediness(float bonusNeediness)
+    public void increaseNeediness(float additional_neediness)
     {
-        this.current_neediness.setValue(getNeediness() + bonusNeediness);
+        this.current_neediness.incrementValue(additional_neediness);
     }
 
-    // TODO: Replace with more general things later
-    public float getEntertainment()
+    public float getConditionValue(string condition_name)
     {
-        return this.current_entertainment.getValue();
+        PetCondition condition = getConditionFromString(condition_name);
+        if (condition != null)
+        {
+            return condition.getValue();
+        } else
+        {
+            throw new KeyNotFoundException("Undefined condition name " + condition_name);
+        }
     }
-    public void increaseEntertainment(float bonusEntertainment)
+    public void increaseConditionValue(string condition_name, float additional_value)
     {
-        this.current_entertainment.setValue(getEntertainment() + bonusEntertainment);
+        PetCondition condition = getConditionFromString(condition_name);
+        if (condition != null)
+        {
+            condition.incrementValue(additional_value);
+        }
+        else
+        {
+            throw new KeyNotFoundException("Undefined condition name " + condition_name);
+        }
+    }
+
+    public Dictionary<string, float> getAllConditionValues()
+    {
+        Dictionary<string, float> result = new Dictionary<string, float>();
+        foreach (string condition_name in condition_indices.Keys)
+        {
+            result.Add(condition_name, getConditionValue(condition_name));
+        }
+        return result;
     }
 }

@@ -28,9 +28,12 @@ public class PetStatusUI : MonoBehaviour
 
         string updatedDisplayText = "";
         updatedDisplayText += "Healthiness: " + pet.getHealth() + "\n";
-        // TODO: update when pet conditions are expanded
+
         // secondary conditions should be visually less important than health i think
-        updatedDisplayText += "Entertainedness: " + pet.getEntertainment() + "\n";
+        foreach (KeyValuePair<string, float> entry in pet.getAllConditionValues())
+        {
+            updatedDisplayText += entry.Key + " " + entry.Value + "\n";
+        }
 
         this.displayTarget.text = updatedDisplayText;
     }
