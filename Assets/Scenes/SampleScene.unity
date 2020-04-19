@@ -250,7 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCam: {fileID: 624711382}
-  MovementDistance: 7
+  MovementDistance: 10
+  movementRestriction: 0.7
 --- !u!1 &1365644137
 GameObject:
   m_ObjectHideFlags: 0
