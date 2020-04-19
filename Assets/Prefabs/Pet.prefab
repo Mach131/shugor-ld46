@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 4571198068828608449}
   - component: {fileID: 3992184169346372645}
   - component: {fileID: 421500514097082910}
-  - component: {fileID: 8087522054092546411}
+  - component: {fileID: 1009478558553776365}
   m_Layer: 0
   m_Name: putSpriteHereMaybe
   m_TagString: Untagged
@@ -132,7 +132,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8087522054092546411
+--- !u!64 &1009478558553776365
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 1813733104919415138, guid: d22978c5162537a4eaf5cdbaf8bed94e,
     type: 3}
-  petStatus: {fileID: 0}
+  petStatus: {fileID: 1514549604}
   sceneCamera: {fileID: 2010220524}
   healthRestoreAmount: 10
   needinessIncreaseAmount: 10

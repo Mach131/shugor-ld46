@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8004679957106470228}
   - component: {fileID: 5336486776511102188}
   - component: {fileID: 6627218892397110750}
-  - component: {fileID: 7510007969816354178}
+  - component: {fileID: 8978925036614137844}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7510007969816354178
+--- !u!64 &8978925036614137844
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
