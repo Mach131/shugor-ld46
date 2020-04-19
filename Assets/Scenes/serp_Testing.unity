@@ -623,6 +623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: VeryBasicUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4295819371458340181, guid: 0d676ab2ebf6f874fb6d928911d5a55a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -253
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d676ab2ebf6f874fb6d928911d5a55a, type: 3}
 --- !u!1001 &5700807645090551606
@@ -645,7 +650,7 @@ PrefabInstance:
     - target: {fileID: 5756756237863901107, guid: d90add67b3dcc384783906f0ee8a909a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.93
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 5756756237863901107, guid: d90add67b3dcc384783906f0ee8a909a,
         type: 3}
