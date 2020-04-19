@@ -10,12 +10,9 @@ public class BouncingBallInteraction : MonoBehaviour
     // Would be nice to have a more elegant approach to these
     private static float FLOOR_HEIGHT = -3.5f;
     private static float ROOM_EXTENTS = 12;
-
-    [SerializeField]
+    
     private static Vector3 GRAVITY = new Vector3(0, -128, 0);
-    [SerializeField]
     private static float JUMP_SPEED = 56;
-    [SerializeField]
     private static float AIMING_FACTOR = 1.0f;
 
     // don't feel like using a rigid body altho that might actually be better
