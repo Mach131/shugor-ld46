@@ -19,8 +19,11 @@ public interface InteractionData
     /// <summary>
     /// Instantiates all of the objects required for this interaction system to work.
     /// </summary>
-    void instantiateInteractions();
+    /// <param name="petStatus">Pet's status object</param>
+    /// <param name="transform">The parent transform to instantiate objects
+    /// under.</param>
+    void instantiateInteractions(PetStatus petStatus);
 
-    // Can add other things that all interaction systems should have later; for
-    // instance, maybe a way to update neediness influences
+    // Can add other things that all interaction systems should have here, then use
+    // the InteractionDataManager to call them
 }

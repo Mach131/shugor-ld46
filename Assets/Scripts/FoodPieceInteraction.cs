@@ -4,9 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// Controls the player's interactions with a food piece.
-/// May be adjusted as interactions are generalized.
 /// </summary>
-public class FoodPieceScript : MonoBehaviour
+public class FoodPieceInteraction : MonoBehaviour
 {
     private float healthRestoreAmount = 10;
     private float needinessIncreaseAmount = 10;
