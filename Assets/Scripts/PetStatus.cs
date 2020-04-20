@@ -9,6 +9,15 @@ using UnityEngine;
 /// </summary>
 public class PetStatus : MonoBehaviour
 {
+    [SerializeField]
+    public Material neutralSprite;
+    [SerializeField]
+    public Material happySprite;
+    [SerializeField]
+    public Material hungrySprite;
+    [SerializeField]
+    public Material angrySprite;
+
     // Stats/conditions
     [SerializeField]
     private PetCondition current_health;
@@ -21,9 +30,14 @@ public class PetStatus : MonoBehaviour
     [SerializeField]
     private float default_neediness_decay = -0.5f;
 
+    private float hunger_threshold = 33;
+    private float anger_threshold = 50;
+
     [SerializeField]
     private List<PetCondition> current_conditions;
     private Dictionary<string, int> condition_indices;
+
+    private Renderer rend;
 
     //Constants
     private static float MAX_HEALTH = 100;
@@ -100,6 +114,11 @@ public class PetStatus : MonoBehaviour
             this.bindValue();
         }
 
+        public void setValueIncrement(float new_increment)
+        {
+            this.value_delta = () => new_increment * Time.deltaTime;
+        }
+
         public void setMinimum(float min_value)
         {
             this.minimum_value = min_value;
@@ -150,6 +169,9 @@ public class PetStatus : MonoBehaviour
 
         current_conditions = new List<PetCondition>();
         condition_indices = new Dictionary<string, int>();
+
+        rend = GetComponentInChildren<Renderer>();
+        rend.material = neutralSprite;
     }
 
     // Update is called once per frame
@@ -161,6 +183,27 @@ public class PetStatus : MonoBehaviour
         foreach (PetCondition condition in current_conditions)
         {
             condition.on_update();
+        }
+
+        // updating sprite
+        if (getHealth() < hunger_threshold)
+        {
+            updateSprite(hungrySprite);
+        } else if (getHappiness() < anger_threshold)
+        {
+            updateSprite(angrySprite);
+        } else
+        {
+            // TODO: happiness
+            updateSprite(neutralSprite);
+        }
+    }
+
+    private void updateSprite(Material newSprite)
+    {
+        if (rend.material != newSprite)
+        {
+            rend.material = newSprite;
         }
     }
 
@@ -209,6 +252,16 @@ public class PetStatus : MonoBehaviour
 
         int condition_index = condition_indices[condition_name];
         return current_conditions[condition_index];
+    }
+
+    public void updatePetFormStats(float new_needinessDelta, Material new_defaultSprite,
+        Material new_happySprite, Material new_hungrySprite, Material new_angrySprite)
+    {
+        current_neediness.setValueIncrement(new_needinessDelta);
+        neutralSprite = new_defaultSprite;
+        happySprite = new_happySprite;
+        hungrySprite = new_hungrySprite;
+        angrySprite = new_angrySprite;
     }
 
 
@@ -264,5 +317,24 @@ public class PetStatus : MonoBehaviour
             result.Add(condition_name, getConditionValue(condition_name));
         }
         return result;
+    }
+
+    // Likely inefficient
+    public float getHappiness()
+    {
+        float min_happiness = 100;
+        foreach (PetCondition condition in current_conditions)
+        {
+            float value = condition.getValue();
+            if (value == 0)
+            {
+                return 0;
+            } else if (value < min_happiness)
+            {
+                min_happiness = value;
+            }
+        }
+
+        return min_happiness;
     }
 }
