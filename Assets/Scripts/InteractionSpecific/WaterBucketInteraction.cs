@@ -77,7 +77,7 @@ public class WaterBucketInteraction : MonoBehaviour
 
     private void Update()
     {
-        FillRender.material.SetFloat("_Cutoff", 1f - Mathf.Min(fullness, 100)/100);
+        FillRender.material.SetFloat("_Cutoff", Mathf.Clamp(1f - Mathf.Min(fullness, 100)/100,0.1f,1f));
         if (filling && !overfull)
         {
             fullness += FILL_RATE * Time.deltaTime;

@@ -108,7 +108,7 @@ public class TitleCutscene : MonoBehaviour
         	if (timer>=10f) {
         		FadeBackground.position=Vector3.Lerp(FadeBackground.position,new Vector3(0f,0f,-14f),0.1f);
         	}
-        	if (timer>=13f) {
+        	if (timer>=11f) {
         		SceneManager.LoadScene (sceneName:nextScene);
         	}
         }
