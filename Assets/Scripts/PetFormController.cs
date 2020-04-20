@@ -54,7 +54,8 @@ public class PetFormController : MonoBehaviour
         public float maximumNeediness;
         public int nextFormTreeId;
     }
-    
+
+    public BackgroundMusicHandler musicHandler;
     public List<PetFormTree> petFormDataTree;
 
     private PetFormTree currentPetFormNode;
@@ -106,6 +107,10 @@ public class PetFormController : MonoBehaviour
             }
         }
 
+        if (musicHandler != null)
+        {
+            musicHandler.updateFormMusicData(currentPetFormIndex);
+        }
         loadPetFormDataFile(currentPetFormNode.petFormDataFile);
     }
 

@@ -371,4 +371,8 @@ public class PetStatus : MonoBehaviour
     {
         return getHappiness() >= anger_threshold;
     }
+    public bool isHungry()
+    {
+        return getHealth() < hunger_threshold;
+    }
 }
