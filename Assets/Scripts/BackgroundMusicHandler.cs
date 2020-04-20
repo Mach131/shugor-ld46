@@ -52,6 +52,12 @@ public class BackgroundMusicHandler : MonoBehaviour
     {
         if (!init)
         {
+            if (newMusicData.normalMusic == normalBGM.clip &&
+                newMusicData.upsetMusic == upsetBGM.clip)
+            {
+                return;
+            }
+
             // fade out instead?
             normalBGM.Stop();
             upsetBGM.Stop();

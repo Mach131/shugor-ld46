@@ -148,6 +148,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8768245678721680894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &916923401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8768245679510924987, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
+    type: 3}
+  m_PrefabInstance: {fileID: 8768245678721680894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c6921304df39e14e9db76a13fcc88be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &947016297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8058652739715217287, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
@@ -1498,7 +1510,7 @@ PrefabInstance:
         type: 3}
       propertyPath: interactionManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 916923401}
     - target: {fileID: 7419285674824091108, guid: 2abc7fbaad442324b941801c8fcfb397,
         type: 3}
       propertyPath: needinessToUnlockedInteractions.Array.data[0].unlockedInteraction
