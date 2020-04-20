@@ -1,0 +1,7 @@
+{
+	"neediness_delta":-5,
+	"default_sprite_name":"Sprites/blueberry/Blueberry_Neutral",
+	"happy_sprite_name":"Sprites/blueberry/Blueberry_Happy",
+	"hungry_sprite_name":"Sprites/blueberry/Blueberry_Sad",
+	"angry_sprite_name":"Sprites/blueberry/Blueberry_Angry"
+}

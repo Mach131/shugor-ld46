@@ -1,0 +1,7 @@
+{
+	"neediness_delta":-1000,
+	"default_sprite_name":"Sprites/babyrock/babyrock",
+	"happy_sprite_name":"Sprites/babyrock/babyrock",
+	"hungry_sprite_name":"Sprites/babyrock/babyrock",
+	"angry_sprite_name":"Sprites/babyrock/babyrock"
+}

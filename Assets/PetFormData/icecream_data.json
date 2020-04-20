@@ -1,0 +1,7 @@
+{
+	"neediness_delta":0,
+	"default_sprite_name":"Sprites/icecream/Icecream_Neutral",
+	"happy_sprite_name":"Sprites/icecream/Icecream_Happy",
+	"hungry_sprite_name":"Sprites/icecream/Icecream_Sad",
+	"angry_sprite_name":"Sprites/icecream/Icecream_Angry"
+}
