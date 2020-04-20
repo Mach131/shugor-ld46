@@ -301,6 +301,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8768245678721680894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1056896194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6783127032450428597, guid: 228bb3d5bdab406488a0bcef8371321c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6783127031928983227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783127031928983228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab34f973d6315b54b84338869a4ec525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1284254577
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +479,11 @@ PrefabInstance:
       propertyPath: pet
       value: 
       objectReference: {fileID: 5841134311053307325}
+    - target: {fileID: 4295819370569898690, guid: 0d676ab2ebf6f874fb6d928911d5a55a,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1056896194}
     - target: {fileID: 4295819370569898694, guid: 0d676ab2ebf6f874fb6d928911d5a55a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -828,6 +845,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228bb3d5bdab406488a0bcef8371321c, type: 3}
+--- !u!1 &6783127031928983228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6783127032450428599, guid: 228bb3d5bdab406488a0bcef8371321c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6783127031928983227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6783127031928983229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783127031928983228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73f01b837090f94c8f187285cb41689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungryEndingSceneName: serp_EndingTest
+  petFormEndings:
+  - petFormId: 2
+    goodEndingSceneName: serp_EndingTest
+    badEndingSceneName: serp_EndingTest
+  - petFormId: 4
+    goodEndingSceneName: serp_EndingTest
+    badEndingSceneName: serp_EndingTest
+  - petFormId: 5
+    goodEndingSceneName: serp_EndingTest
+    badEndingSceneName: serp_EndingTest
+  - petFormId: 7
+    goodEndingSceneName: serp_EndingTest
+    badEndingSceneName: serp_EndingTest
+  - petFormId: 8
+    goodEndingSceneName: serp_EndingTest
+    badEndingSceneName: serp_EndingTest
 --- !u!1001 &8602394417966707581
 PrefabInstance:
   m_ObjectHideFlags: 0

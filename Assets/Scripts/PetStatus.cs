@@ -32,12 +32,14 @@ public class PetStatus : MonoBehaviour
 
     private float hunger_threshold = 33;
     private float anger_threshold = 50;
+    private float happy_threshold = 80;
 
     [SerializeField]
     private List<PetCondition> current_conditions;
     private Dictionary<string, int> condition_indices;
 
     private Renderer rend;
+    private bool isInanimate;
 
     //Constants
     private static float MAX_HEALTH = 100;
@@ -163,7 +165,7 @@ public class PetStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        current_health = new PetCondition(MAX_HEALTH, default_hunger_rate);
+        current_health = new PetCondition(MAX_HEALTH, getHungerDelta);
         current_health.setBounds(0, MAX_HEALTH);
         current_neediness = new PetCondition(0, default_neediness_decay);
         current_neediness.setMinimum(0);
@@ -173,6 +175,12 @@ public class PetStatus : MonoBehaviour
 
         rend = GetComponentInChildren<Renderer>();
         rend.material = neutralSprite;
+        isInanimate = false;
+    }
+
+    private float getHungerDelta()
+    {
+        return isInanimate ? 0 : default_hunger_rate * Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -190,13 +198,21 @@ public class PetStatus : MonoBehaviour
         if (getHealth() < hunger_threshold)
         {
             updateSprite(hungrySprite);
-        } else if (getHappiness() < anger_threshold)
+        }
+        else
         {
-            updateSprite(angrySprite);
-        } else
-        {
-            // TODO: happiness
-            updateSprite(neutralSprite);
+            float happiness = getHappiness();
+            if (happiness < anger_threshold)
+            {
+                updateSprite(angrySprite);
+            }
+            else if (happiness < happy_threshold)
+            {
+                updateSprite(neutralSprite);
+            } else
+            {
+                updateSprite(happySprite);
+            }
         }
     }
 
@@ -256,13 +272,20 @@ public class PetStatus : MonoBehaviour
     }
 
     public void updatePetFormStats(float new_needinessDelta, Material new_defaultSprite,
-        Material new_happySprite, Material new_hungrySprite, Material new_angrySprite)
+        Material new_happySprite, Material new_hungrySprite, Material new_angrySprite,
+        bool inanimate)
     {
         current_neediness.setValueIncrement(new_needinessDelta);
         neutralSprite = new_defaultSprite;
         happySprite = new_happySprite;
         hungrySprite = new_hungrySprite;
         angrySprite = new_angrySprite;
+
+        isInanimate = inanimate;
+        if (isInanimate)
+        {
+            current_health.setValue(MAX_HEALTH);
+        }
     }
 
 
@@ -342,5 +365,10 @@ public class PetStatus : MonoBehaviour
         }
 
         return min_happiness;
+    }
+
+    public bool isSatisfied()
+    {
+        return getHappiness() >= anger_threshold;
     }
 }

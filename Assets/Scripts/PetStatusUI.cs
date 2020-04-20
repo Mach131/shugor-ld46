@@ -38,7 +38,7 @@ public class PetStatusUI : MonoBehaviour
 
         // getting the remaining time as a percentage
         float remainingTimeFraction =
-            gameController.getRemainingTIme() / gameController.getTotalDuration();
+            gameController.getRemainingTime() / gameController.getTotalDuration();
         updatedDisplayText += "\nBattery: "+(int)(remainingTimeFraction * 100)+"%";
 
         this.displayTarget.text = updatedDisplayText;

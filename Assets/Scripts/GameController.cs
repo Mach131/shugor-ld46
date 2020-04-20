@@ -18,24 +18,40 @@ public class GameController : MonoBehaviour
 
     private float currentTime;
     private int transformationIndex;
+    private PetStatus petStatus;
+    private EndingManager endingManager;
 
     // Start is called before the first frame update
     void Start()
     {
         currentTime = 0;
         transformationIndex = 0;
+
+        endingManager = GetComponent<EndingManager>();
+        petStatus = petFormController.GetComponent<PetStatus>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-
-        if ((transformationIndex == 0 && currentTime >= FIRST_TRANSFORM_TIME) ||
-            (transformationIndex == 1 && currentTime >= SECOND_TRANSFORM_TIME))
+        if (petStatus.getHealth() <= 0)
         {
-            petFormController.advancePetForm();
-            transformationIndex += 1;
+            endingManager.toHungryEnding();
+        } else
+        {
+            currentTime += Time.deltaTime;
+
+            if ((transformationIndex == 0 && currentTime >= FIRST_TRANSFORM_TIME) ||
+                (transformationIndex == 1 && currentTime >= SECOND_TRANSFORM_TIME))
+            {
+                petFormController.advancePetForm();
+                transformationIndex += 1;
+            }
+
+            if (currentTime >= TOTAL_GAME_DURATION)
+            {
+                endingManager.toStandardEnding();
+            }
         }
     }
 
@@ -43,7 +59,7 @@ public class GameController : MonoBehaviour
     {
         return TOTAL_GAME_DURATION;
     }
-    public float getRemainingTIme()
+    public float getRemainingTime()
     {
         return TOTAL_GAME_DURATION - currentTime;
     }

@@ -3,5 +3,6 @@
 	"default_sprite_name":"Sprites/bigrock/bigrock",
 	"happy_sprite_name":"Sprites/bigrock/bigrock",
 	"hungry_sprite_name":"Sprites/bigrock/bigrock",
-	"angry_sprite_name":"Sprites/bigrock/bigrock"
+	"angry_sprite_name":"Sprites/bigrock/bigrock",
+	"inanimate":true
 }

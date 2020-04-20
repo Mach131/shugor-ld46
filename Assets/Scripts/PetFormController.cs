@@ -16,6 +16,7 @@ public class PetFormController : MonoBehaviour
         public string happy_sprite_name = "";
         public string hungry_sprite_name = "";
         public string angry_sprite_name = "";
+        public bool inanimate = false;
 
         public Material getDefaultSprite()
         {
@@ -125,6 +126,7 @@ public class PetFormController : MonoBehaviour
 
         petStatus.updatePetFormStats(loadedData.neediness_delta,
             loadedData.getDefaultSprite(), loadedData.getHappySprite(),
-            loadedData.getHungrySprite(), loadedData.getAngrySprite());
+            loadedData.getHungrySprite(), loadedData.getAngrySprite(),
+            loadedData.inanimate);
     }
 }
