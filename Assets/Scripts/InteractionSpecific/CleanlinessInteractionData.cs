@@ -6,10 +6,14 @@ public class CleanlinessInteractionData : MonoBehaviour, InteractionData
 {
     public WaterBucketInteraction bucket;
 
-    private static string condition_name = "Cleanliness";
-    private static float value_decay = -4;
-    private static float value_increase_amount = 50;
-    private static float neediness_increase_amount = 25;
+    [SerializeField]
+    private string condition_name = "Cleanliness";
+    [SerializeField]
+    private float value_decay = -4;
+    [SerializeField]
+    private float value_increase_amount = 50;
+    [SerializeField]
+    private float neediness_increase_amount = 25;
 
     private WaterBucketInteraction instantiatedBucket;
 

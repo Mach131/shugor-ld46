@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &633051446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682608402893745510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede2e81a7917de24293534d35ba760ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush: {fileID: 7390498990844281739, guid: d4d251c6123000b4595b10ea984169f5, type: 3}
+  conditionName: Vanity
+  valueDecay: -4
+  valueIncreasePerSecond: 20
+  needinessIncreasePerSecond: 30
 --- !u!1 &8768245679510924986
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +47,7 @@ Transform:
   m_Children:
   - {fileID: 7424583944253779550}
   - {fileID: 4709515786856302715}
+  - {fileID: 5236584605084748695}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   petStatus: {fileID: 0}
+  testInteractionData: {fileID: 682608402893745510}
 --- !u!1001 &3732013131367706830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,7 +150,7 @@ PrefabInstance:
     - target: {fileID: 4150944990060716707, guid: 55946a1d9f6b0674da41b5436a23c95d,
         type: 3}
       propertyPath: m_Name
-      value: EntertainmentInteractionController
+      value: ExerciseInteractionController
       objectReference: {fileID: 0}
     - target: {fileID: 6861930160414222601, guid: 55946a1d9f6b0674da41b5436a23c95d,
         type: 3}
@@ -195,4 +214,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6861930160414222601, guid: 55946a1d9f6b0674da41b5436a23c95d,
     type: 3}
   m_PrefabInstance: {fileID: 4049601232201303895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6249915868011207304
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8768245679510924984}
+    m_Modifications:
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900981272882919406, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+        type: 3}
+      propertyPath: m_Name
+      value: VanityInteractionController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6, type: 3}
+--- !u!1 &682608402893745510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6900981272882919406, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6249915868011207304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5236584605084748695 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2166298123532079391, guid: 67ad31be53de37a4aa7aa2cb04ae0ca6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6249915868011207304}
   m_PrefabAsset: {fileID: 0}

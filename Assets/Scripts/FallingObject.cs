@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class FallingObject : MonoBehaviour
 {
+    public bool destroyAtThreshold = true;
     [SerializeField]
     private Vector3 GRAVITY = new Vector3(0, -16, 0);
     [SerializeField]
@@ -28,7 +29,16 @@ public class FallingObject : MonoBehaviour
 
         if (transform.position.y <= OFFSCREEN_THRESHOLD)
         {
-            GameObject.Destroy(gameObject);
+            if (destroyAtThreshold)
+            {
+                GameObject.Destroy(gameObject);
+            }
+            else
+            {
+                velocity = Vector3.zero;
+                transform.position = new Vector3(
+                    transform.position.x, OFFSCREEN_THRESHOLD, transform.position.z);
+            }
         }
     }
 }

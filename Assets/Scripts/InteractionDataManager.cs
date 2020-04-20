@@ -15,14 +15,14 @@ public class InteractionDataManager : MonoBehaviour
     [SerializeField]
     private List<InteractionData> activeInteractionSystems = new List<InteractionData>();
 
-    /* Uncomment this for testing
+    ///* Uncomment this for testing
     [ContextMenuItem("Start interaction system", "testInteraction")]
     public GameObject testInteractionData;
     public void testInteraction()
     {
         startInteractionSystem(testInteractionData.GetComponent<InteractionData>());
     }
-    */
+    //*/
 
     public void startInteractionSystem(InteractionData interactionData)
     {

@@ -6,10 +6,14 @@ public class ExerciseInteractionData : MonoBehaviour, InteractionData
 {
     public BouncingBallInteraction bouncingBall;
 
-    private static string condition_name = "Entertainment";
-    private static float value_decay = -5;
-    private static float value_increase_amount = 20;
-    private static float neediness_increase_amount = 25;
+    [SerializeField]
+    private string condition_name = "Entertainment";
+    [SerializeField]
+    private float value_decay = -5;
+    [SerializeField]
+    private float value_increase_amount = 20;
+    [SerializeField]
+    private float neediness_increase_amount = 25;
 
     public void addCondition(PetStatus petStatus)
     {
