@@ -41,4 +41,13 @@ public class FallingObject : MonoBehaviour
             }
         }
     }
+
+    public float getThreshold()
+    {
+        return OFFSCREEN_THRESHOLD;
+    }
+    public void setVelocity(Vector3 newVelocity)
+    {
+        velocity = newVelocity;
+    }
 }
