@@ -41,6 +41,7 @@ public class PetStatus : MonoBehaviour
 
     //Constants
     private static float MAX_HEALTH = 100;
+    private static float OVERFEED_CONVERSION = 1.5f;
 
     [Serializable]
     /// <summary>
@@ -272,8 +273,13 @@ public class PetStatus : MonoBehaviour
     }
     public void increaseHealth(float additional_health)
     {
-        this.current_health.incrementValue(additional_health);
+        float overfeed = (getHealth() + additional_health) - MAX_HEALTH;
+        if (overfeed > 0)
+        {
+            increaseNeediness(overfeed * OVERFEED_CONVERSION);
+        }
 
+        this.current_health.incrementValue(additional_health);
     }
 
     public float getNeediness()

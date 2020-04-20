@@ -7,7 +7,7 @@ public class CleanlinessInteractionData : MonoBehaviour, InteractionData
     public WaterBucketInteraction bucket;
 
     private static string condition_name = "Cleanliness";
-    private static float value_decay = -5;
+    private static float value_decay = -4;
     private static float value_increase_amount = 50;
     private static float neediness_increase_amount = 25;
 
@@ -33,7 +33,7 @@ public class CleanlinessInteractionData : MonoBehaviour, InteractionData
             return value_decay * Time.deltaTime;
         } else
         {
-            return value_decay * 3 * Time.deltaTime;
+            return value_decay * 2 * Time.deltaTime;
         }
     }
 }

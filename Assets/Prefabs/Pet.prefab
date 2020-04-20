@@ -437,7 +437,6 @@ MonoBehaviour:
     nextForms: []
   - petFormDataFile: {fileID: 4900000, guid: b1b53325de60de641bc8e8d12bfdad0b, type: 3}
     nextForms: []
-  testAdvanceAtNeediness: 100
 --- !u!1 &5841134311370170827
 GameObject:
   m_ObjectHideFlags: 0
