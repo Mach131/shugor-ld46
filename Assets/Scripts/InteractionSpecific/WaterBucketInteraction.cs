@@ -18,6 +18,11 @@ public class WaterBucketInteraction : MonoBehaviour
     private float FULLNESS_SCALING_FACTOR = 0.8f;
     [SerializeField]
     private float EMPTYING_Z_DISP = -6.5f;
+    [SerializeField]
+    private float EMPTYING_ROTATION_DEGREES = 135;
+
+
+    private static Quaternion DEFAULT_ROTATION = Quaternion.Euler(Vector3.zero);
 
     public WaterDrop waterDrop;
 
@@ -89,6 +94,7 @@ public class WaterBucketInteraction : MonoBehaviour
             if (emptyingTimer <= 0)
             {
                 transform.localPosition = Vector3.zero;
+                transform.rotation = DEFAULT_ROTATION;
                 fullness = 0;
                 overfull = false;
                 emptying = false;
@@ -124,6 +130,7 @@ public class WaterBucketInteraction : MonoBehaviour
         emptying = true;
         emptyingTimer = EMPTYING_TIME;
         transform.position += Vector3.forward * EMPTYING_Z_DISP;
+        transform.rotation *= Quaternion.Euler(0, 0, EMPTYING_ROTATION_DEGREES);
     }
 
     public bool isOverfull()
