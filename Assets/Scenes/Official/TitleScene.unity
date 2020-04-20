@@ -1618,6 +1618,7 @@ MonoBehaviour:
   ShugorJingle: {fileID: 8300000, guid: 103beda0cc0e22c46b32136ee69bb974, type: 3}
   Bleep: {fileID: 8300000, guid: d23889e050f634c409909d4a2b777670, type: 3}
   CrowdSounder: {fileID: 1965541658}
+  nextScene: MainScene
 --- !u!82 &2300199862563957670
 AudioSource:
   m_ObjectHideFlags: 0

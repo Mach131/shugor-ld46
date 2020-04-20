@@ -34,7 +34,7 @@ public class FoodPieceInteraction : MonoBehaviour
         {
             this.petStatus.increaseHealth(healthRestoreAmount);
             this.petStatus.increaseNeediness(needinessIncreaseAmount);
-            Debug.Log("yum");
+            //Debug.Log("yum");
             Instantiate(FeedParticles, transform.position+new Vector3(0.0f,0.0f,-1f),Quaternion.Euler(0f,0f,0f));
         }
         GameObject.Destroy(gameObject);

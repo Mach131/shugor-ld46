@@ -100,7 +100,7 @@ public class BouncingBallInteraction : MonoBehaviour
                 this.pet_status.increaseConditionValue(this.condition_name,
                     this.condition_restore_amount);
                 this.pet_status.increaseNeediness(this.neediness_increase_amount);
-                Debug.Log("bounce");
+                //Debug.Log("bounce");
 
                 if (velocity.y < 0)
                 {

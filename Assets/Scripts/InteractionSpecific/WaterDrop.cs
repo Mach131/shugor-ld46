@@ -49,7 +49,7 @@ public class WaterDrop : MonoBehaviour
         {
             petStatus.increaseConditionValue(conditionName, conditionRestoreAmount);
             petStatus.increaseNeediness(needinessIncreaseAmount);
-            Debug.Log("wosh");
+            //Debug.Log("wosh");
             GameObject.Destroy(gameObject);
         }
 
