@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e66c15e6cdeeb2a42a17d88e0b2aa6dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c0017f0921b6d54fb3b9db98e597b5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -427,6 +427,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c86650c0680e1e45a03f333dc42712c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FILL_RATE: 33
+  OVERFULL_THRESHOLD: 120
+  EMPTYING_TIME: 1.33
+  FULLNESS_SCALING_FACTOR: 0.8
+  EMPTYING_Z_DISP: -6.5
+  EMPTYING_ROTATION_DEGREES: 135
   waterDrop: {fileID: 2495255076576725891, guid: 2087ff9eadaf06444b743a575cd27ac3,
     type: 3}
   FillBar: {fileID: 7330911342929135809}
