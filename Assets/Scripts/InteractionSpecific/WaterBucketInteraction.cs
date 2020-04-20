@@ -13,6 +13,7 @@ public class WaterBucketInteraction : MonoBehaviour
     private static float OVERFULL_THRESHOLD = 120;
     private static float EMPTYING_TIME = 1.33f;
     private static float FULLNESS_SCALING_FACTOR = 0.8f;
+    private static float EMPTYING_Z_DISP = -6.1f;
 
     public WaterDrop waterDrop;
 
@@ -55,7 +56,7 @@ public class WaterBucketInteraction : MonoBehaviour
         this.maxConditionRestoreAmount = conditionRestoreAmount;
         this.needinessIncreaseAmount = needinessIncreaseAmount;
 
-        transform.position = DEFAULT_POSITION;
+        transform.localPosition = Vector3.zero;
     }
 
     private void updateText()
@@ -83,7 +84,7 @@ public class WaterBucketInteraction : MonoBehaviour
             emptyingTimer -= Time.deltaTime;
             if (emptyingTimer <= 0)
             {
-                transform.position = DEFAULT_POSITION;
+                transform.localPosition = Vector3.zero;
                 fullness = 0;
                 overfull = false;
                 emptying = false;
@@ -118,6 +119,7 @@ public class WaterBucketInteraction : MonoBehaviour
 
         emptying = true;
         emptyingTimer = EMPTYING_TIME;
+        transform.position += Vector3.forward * EMPTYING_Z_DISP;
     }
 
     public bool isOverfull()

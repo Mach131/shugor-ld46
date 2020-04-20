@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntertainmentInteractionData : MonoBehaviour, InteractionData
+public class ExerciseInteractionData : MonoBehaviour, InteractionData
 {
     public BouncingBallInteraction bouncingBall;
 

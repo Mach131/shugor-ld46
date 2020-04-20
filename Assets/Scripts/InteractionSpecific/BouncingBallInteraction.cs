@@ -8,12 +8,17 @@ using UnityEngine;
 public class BouncingBallInteraction : MonoBehaviour
 {
     // Would be nice to have a more elegant approach to these
-    private static float FLOOR_HEIGHT = -3.5f;
-    private static float ROOM_EXTENTS = 12;
-    
-    private static Vector3 GRAVITY = new Vector3(0, -128, 0);
-    private static float JUMP_SPEED = 56;
-    private static float AIMING_FACTOR = 1.0f;
+    [SerializeField]
+    private float FLOOR_HEIGHT = -1f;
+    [SerializeField]
+    private float ROOM_EXTENTS = 3.5f;
+
+    [SerializeField]
+    private Vector3 GRAVITY = new Vector3(0, -128, 0);
+    [SerializeField]
+    private float JUMP_SPEED = 48;
+    [SerializeField]
+    private float AIMING_FACTOR = 1.0f;
 
     // don't feel like using a rigid body altho that might actually be better
     private Vector3 velocity;
@@ -86,7 +91,7 @@ public class BouncingBallInteraction : MonoBehaviour
             }
         }
 
-        if (bounce_active)
+        if (bounce_active && velocity.y < 0)
         {
             bool checkPetOverlap = Utils.checkOverlap(coll, pet_coll);
             if (checkPetOverlap)

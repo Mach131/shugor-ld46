@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &2963175311405686731
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1845,11 +1845,6 @@ PrefabInstance:
       propertyPath: petStatus
       value: 
       objectReference: {fileID: 5841134311053307325}
-    - target: {fileID: 8768245679510924987, guid: 9f44b1304ab60bb4f8f9a74830d45a90,
-        type: 3}
-      propertyPath: testInteractionData
-      value: 
-      objectReference: {fileID: 947016297}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f44b1304ab60bb4f8f9a74830d45a90, type: 3}
 --- !u!4 &8943425633412311679

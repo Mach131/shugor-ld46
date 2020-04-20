@@ -404,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8010184279021037244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1848698002569912758}
@@ -425,6 +425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155fe059adbad9f429298868408a71c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FLOOR_HEIGHT: -1
+  ROOM_EXTENTS: 3.5
+  GRAVITY: {x: 0, y: -128, z: 0}
+  JUMP_SPEED: 36
+  AIMING_FACTOR: 1
   SelectParticles: {fileID: 105432454677119451, guid: 7aa134b94ab85254bb45fcd2a866f9e0,
     type: 3}
   BounceParticles: {fileID: 4296096498811726929, guid: fe19e45507c6f9e47a6aa8c2e6532dc4,
