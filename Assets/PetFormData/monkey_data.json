@@ -1,0 +1,7 @@
+{
+	"neediness_delta":-1,
+	"default_sprite_name":"Sprites/monkey/Monkey_Neutral",
+	"happy_sprite_name":"Sprites/monkey/Monkey_Happy",
+	"hungry_sprite_name":"Sprites/monkey/Monkey_Sad",
+	"angry_sprite_name":"Sprites/monkey/Monkey_Annoyed"
+}

@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5841134310907633781}
   - component: {fileID: 5841134310907633782}
+  - component: {fileID: 156454347}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -208,6 +209,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: -0.01979543}
     m_Extent: {x: 0.99999994, y: 0.99999976, z: 0.0013652015}
   m_DirtyAABB: 0
+--- !u!65 &156454347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841134310907633780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2962961, y: 2.296296, z: 0.0031349075}
+  m_Center: {x: 0, y: 0.021160638, z: -0.022728087}
 --- !u!1 &5841134311121721627
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +298,7 @@ GameObject:
   - component: {fileID: 5841134311340893306}
   - component: {fileID: 8860134612143936269}
   - component: {fileID: 7419285674824091108}
+  - component: {fileID: 796674502}
   m_Layer: 0
   m_Name: Pet
   m_TagString: Untagged
@@ -300,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 5841134311340893305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 5841134311121721620}
   - {fileID: 5841134310907633781}
@@ -338,6 +353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c856ec86e4474783f8331acc5d288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neutralSprite: {fileID: 2100000, guid: 9d2eb8e8113a53140a0cbb8b85df0060, type: 2}
+  happySprite: {fileID: 2100000, guid: 9d2eb8e8113a53140a0cbb8b85df0060, type: 2}
+  hungrySprite: {fileID: 2100000, guid: 29274ecbd635da14b83df40560c93f1c, type: 2}
+  angrySprite: {fileID: 2100000, guid: 57c0f36e75ee8d042a6f7e0b527e204a, type: 2}
   current_health:
     condition_value: 0
   current_neediness:
@@ -359,10 +378,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 0}
   needinessToUnlockedInteractions:
-  - needinessRequirement: 25
+  - needinessRequirement: 50
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 125
+  - needinessRequirement: 150
     unlockedInteraction: {fileID: 0}
+--- !u!114 &796674502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841134311340893305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c6c39bc6e1c4d41939b030298bd78a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petFormDataTree:
+  - petFormDataFile: {fileID: 4900000, guid: 356f4b600412a5c48bdb7bcf02854a88, type: 3}
+    nextForms:
+    - minimumNeediness: -1
+      maximumNeediness: 50
+      nextFormTreeId: 1
+    - minimumNeediness: 50
+      maximumNeediness: 300
+      nextFormTreeId: 3
+    - minimumNeediness: 300
+      maximumNeediness: -1
+      nextFormTreeId: 6
+  - petFormDataFile: {fileID: 4900000, guid: b51408de75a5ae44e976c938be74c371, type: 3}
+    nextForms:
+    - minimumNeediness: -1
+      maximumNeediness: -1
+      nextFormTreeId: 2
+  - petFormDataFile: {fileID: 4900000, guid: d3829b4e21a4b384e867879e5a60e77e, type: 3}
+    nextForms: []
+  - petFormDataFile: {fileID: 4900000, guid: 597f44c6f39af0c46a6606482eb43dc7, type: 3}
+    nextForms:
+    - minimumNeediness: -1
+      maximumNeediness: 500
+      nextFormTreeId: 4
+    - minimumNeediness: 500
+      maximumNeediness: -1
+      nextFormTreeId: 5
+  - petFormDataFile: {fileID: 4900000, guid: e9bab213de5b3194e887f92fe7a224ae, type: 3}
+    nextForms: []
+  - petFormDataFile: {fileID: 4900000, guid: ca9ba38dd41fa3146bd8390b651d4902, type: 3}
+    nextForms: []
+  - petFormDataFile: {fileID: 4900000, guid: 86e02678efab3044d995ebee05a50fb9, type: 3}
+    nextForms:
+    - minimumNeediness: -1
+      maximumNeediness: 750
+      nextFormTreeId: 7
+    - minimumNeediness: 750
+      maximumNeediness: -1
+      nextFormTreeId: 8
+  - petFormDataFile: {fileID: 4900000, guid: 0e71d1c91ce8a1f49b798daa9ed313a7, type: 3}
+    nextForms: []
+  - petFormDataFile: {fileID: 4900000, guid: b1b53325de60de641bc8e8d12bfdad0b, type: 3}
+    nextForms: []
 --- !u!1 &5841134311370170827
 GameObject:
   m_ObjectHideFlags: 0

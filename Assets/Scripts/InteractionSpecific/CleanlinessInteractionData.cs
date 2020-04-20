@@ -8,7 +8,7 @@ public class CleanlinessInteractionData : MonoBehaviour, InteractionData
 
     private static string condition_name = "Cleanliness";
     private static float value_decay = -5;
-    private static float value_increase_amount = 40;
+    private static float value_increase_amount = 50;
     private static float neediness_increase_amount = 25;
 
     private WaterBucketInteraction instantiatedBucket;
