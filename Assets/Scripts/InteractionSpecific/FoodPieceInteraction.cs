@@ -14,6 +14,31 @@ public class FoodPieceInteraction : MonoBehaviour
     private Collider petColl;
 
     private Collider coll;
+    private FallingObject faller;
+    private bool falling;
+
+    private void Start()
+    {
+        this.coll = GetComponentInChildren<Collider>();
+        this.faller = GetComponent<FallingObject>();
+        falling = false;
+    }
+
+    private void Update()
+    {
+        if (falling)
+        {
+            bool checkPetOverlap = Utils.checkOverlap(coll, petColl);
+            if (checkPetOverlap)
+            {
+                this.petStatus.increaseHealth(healthRestoreAmount);
+                this.petStatus.increaseNeediness(needinessIncreaseAmount);
+                //Debug.Log("yum");
+                Instantiate(FeedParticles, transform.position + new Vector3(0.0f, 0.0f, -1f), Quaternion.Euler(0f, 0f, 0f));
+                GameObject.Destroy(gameObject);
+            }
+        }
+    }
 
     public void Initialize(float healthRestoreAmount, float needinessIncreaseAmount,
         PetStatus petStatus)
@@ -23,20 +48,12 @@ public class FoodPieceInteraction : MonoBehaviour
         this.petStatus = petStatus;
 
         this.petColl = petStatus.GetComponentInChildren<Collider>();
-        this.coll = GetComponentInChildren<Collider>();
     }
 
     // Called when the mouse button is released
     public void releaseFoodPiece()
     {
-        bool checkPetOverlap = Utils.checkOverlap(coll, petColl);
-        if (checkPetOverlap)
-        {
-            this.petStatus.increaseHealth(healthRestoreAmount);
-            this.petStatus.increaseNeediness(needinessIncreaseAmount);
-            //Debug.Log("yum");
-            Instantiate(FeedParticles, transform.position+new Vector3(0.0f,0.0f,-1f),Quaternion.Euler(0f,0f,0f));
-        }
-        GameObject.Destroy(gameObject);
+        falling = true;
+        faller.enabled = true;
     }
 }

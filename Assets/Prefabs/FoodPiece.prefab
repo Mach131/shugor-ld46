@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7926997692138656278}
   - component: {fileID: 1813733104919415138}
   - component: {fileID: 5927151836802811809}
+  - component: {fileID: 5080924119124259214}
   m_Layer: 0
   m_Name: FoodPiece
   m_TagString: Untagged
@@ -173,6 +174,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   initializeAsHeld: 1
+--- !u!114 &5080924119124259214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425587827785306291}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c2dbea0c0034d42866ad040108eff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GRAVITY: {x: 0, y: -48, z: 0}
+  OFFSCREEN_THRESHOLD: -5
 --- !u!1 &5599509149779050685
 GameObject:
   m_ObjectHideFlags: 0

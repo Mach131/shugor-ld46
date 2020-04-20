@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2495255076576725890}
   - component: {fileID: 2495255076576725891}
+  - component: {fileID: 3989721283894887179}
   m_Layer: 0
   m_Name: WaterDrop
   m_TagString: Untagged
@@ -247,6 +248,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6245d01fe35651c4991075841b9499f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GRAVITY: {x: 0, y: -16, z: 0}
+  OFFSCREEN_THRESHOLD: -20
+--- !u!114 &3989721283894887179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2495255076576725892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c2dbea0c0034d42866ad040108eff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2495255077321563873

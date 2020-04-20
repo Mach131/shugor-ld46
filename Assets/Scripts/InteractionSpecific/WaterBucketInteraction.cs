@@ -8,12 +8,16 @@ using UnityEngine;
 /// </summary>
 public class WaterBucketInteraction : MonoBehaviour
 {
-    private static Vector3 DEFAULT_POSITION = new Vector3(-10, -5, 0);
-    private static float FILL_RATE = 33;
-    private static float OVERFULL_THRESHOLD = 120;
-    private static float EMPTYING_TIME = 1.33f;
-    private static float FULLNESS_SCALING_FACTOR = 0.8f;
-    private static float EMPTYING_Z_DISP = -6.1f;
+    [SerializeField]
+    private float FILL_RATE = 33;
+    [SerializeField]
+    private float OVERFULL_THRESHOLD = 120;
+    [SerializeField]
+    private float EMPTYING_TIME = 1.33f;
+    [SerializeField]
+    private float FULLNESS_SCALING_FACTOR = 0.8f;
+    [SerializeField]
+    private float EMPTYING_Z_DISP = -6.5f;
 
     public WaterDrop waterDrop;
 
