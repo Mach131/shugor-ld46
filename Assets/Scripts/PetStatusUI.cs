@@ -10,6 +10,7 @@ using UnityEngine;
 public class PetStatusUI : MonoBehaviour
 {
     public PetStatus pet;
+    public GameController gameController;
 
     // This might not be necessary if we update this to be more than just
     // text on the screen
@@ -27,13 +28,18 @@ public class PetStatusUI : MonoBehaviour
         // Feel free to replace all of this if you're updating the UI
 
         string updatedDisplayText = "";
-        updatedDisplayText += "Healthiness: " + pet.getHealth() + "\n";
+        updatedDisplayText += "Healthiness: " + (int)pet.getHealth() + "\n";
 
         // secondary conditions should be visually less important than health i think
         foreach (KeyValuePair<string, float> entry in pet.getAllConditionValues())
         {
-            updatedDisplayText += entry.Key + " " + entry.Value + "\n";
+            updatedDisplayText += entry.Key + " " + (int)entry.Value + "\n";
         }
+
+        // getting the remaining time as a percentage
+        float remainingTimeFraction =
+            gameController.getRemainingTIme() / gameController.getTotalDuration();
+        updatedDisplayText += "\nBattery: "+(int)(remainingTimeFraction * 100)+"%";
 
         this.displayTarget.text = updatedDisplayText;
     }
