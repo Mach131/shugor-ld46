@@ -419,6 +419,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1548189947940392225, guid: 8964f4f17a09c314e8db6072b1f216c1,
+        type: 3}
+      propertyPath: petForm
+      value: 
+      objectReference: {fileID: 1688487823}
     - target: {fileID: 1570348637110147971, guid: 8964f4f17a09c314e8db6072b1f216c1,
         type: 3}
       propertyPath: m_LocalPosition.x

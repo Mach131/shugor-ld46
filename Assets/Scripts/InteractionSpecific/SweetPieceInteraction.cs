@@ -52,6 +52,7 @@ public class SweetPieceInteraction : MonoBehaviour
                 Instantiate(SweetParticle,
                     transform.position + new Vector3(0.0f, 0.0f, -1f),
                     Quaternion.Euler(0f, 0f, 0f));
+                SoundEffectHandler.player.playRandomNeutralSound();
                 GameObject.Destroy(gameObject);
             }
         }

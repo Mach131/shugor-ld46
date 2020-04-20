@@ -83,6 +83,7 @@ public class SwitchGameInteraction : MonoBehaviour
                         transform.position + new Vector3(
                             gamingDisp.x, gamingDisp.y, -1f),
                         Quaternion.Euler(0f, 0f, 0f));
+                    SoundEffectHandler.player.playRandomNeutralSound();
                 }
 
                 gamingTimer -= Time.deltaTime;

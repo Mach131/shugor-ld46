@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 856588950}
   - component: {fileID: 856588951}
+  - component: {fileID: 4545919679554112067}
   m_Layer: 0
   m_Name: SweetsButton
   m_TagString: Untagged
@@ -81,6 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &4545919679554112067
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856588949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.32000002, y: 0.32000002, z: 0.20000003}
+  m_Center: {x: 0, y: 0, z: -0.0000000037252903}
 --- !u!1 &1045493887894019419
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +255,7 @@ MeshCollider:
   m_GameObject: {fileID: 2612946497635755048}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
