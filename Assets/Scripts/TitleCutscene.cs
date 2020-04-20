@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleCutscene : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class TitleCutscene : MonoBehaviour
 	private float timer=0f;
 	private Vector3 FBGPos;
 	private bool hasPlayed;
+
+	public string nextScene;
 
     // Start is called before the first frame update
     void Start()
@@ -104,6 +107,9 @@ public class TitleCutscene : MonoBehaviour
         	}
         	if (timer>=10f) {
         		FadeBackground.position=Vector3.Lerp(FadeBackground.position,new Vector3(0f,0f,-14f),0.1f);
+        	}
+        	if (timer>=13f) {
+        		SceneManager.LoadScene (sceneName:nextScene);
         	}
         }
     }
