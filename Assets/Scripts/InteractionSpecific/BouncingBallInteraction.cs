@@ -29,6 +29,9 @@ public class BouncingBallInteraction : MonoBehaviour
     private Collider pet_coll;
     private Collider coll;
 
+    public Transform SelectParticles;
+    public Transform BounceParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +91,7 @@ public class BouncingBallInteraction : MonoBehaviour
             bool checkPetOverlap = Utils.checkOverlap(coll, pet_coll);
             if (checkPetOverlap)
             {
+                Instantiate(BounceParticles, transform.position+new Vector3(0.0f,0.0f,-1f),Quaternion.Euler(0f,0f,0f));
                 this.pet_status.increaseConditionValue(this.condition_name,
                     this.condition_restore_amount);
                 this.pet_status.increaseNeediness(this.neediness_increase_amount);
@@ -111,6 +115,7 @@ public class BouncingBallInteraction : MonoBehaviour
     /// </summary>
     public void startBounce()
     {
+        Instantiate(SelectParticles, transform.position+new Vector3(0.0f,0.0f,-1f),Quaternion.Euler(0f,0f,0f));
         if (!bounce_active)
         {
             //TODO: figure out actual velocity setting?

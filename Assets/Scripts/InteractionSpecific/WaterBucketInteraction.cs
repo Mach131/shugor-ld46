@@ -24,6 +24,9 @@ public class WaterBucketInteraction : MonoBehaviour
 
     private TextMeshPro textMesh;
     private DraggableObject drag;
+    public Transform FillBar;
+    private Renderer FillRender;
+    public Transform SelectParticles;
 
     private PetStatus petStatus;
     private string conditionName;
@@ -40,6 +43,7 @@ public class WaterBucketInteraction : MonoBehaviour
 
         drag = GetComponent<DraggableObject>();
         textMesh = GetComponentInChildren<TextMeshPro>();
+        FillRender = FillBar.GetComponent<Renderer>();
         updateText();
     }
 
@@ -63,6 +67,7 @@ public class WaterBucketInteraction : MonoBehaviour
 
     private void Update()
     {
+        FillRender.material.SetFloat("_Cutoff", 1f - Mathf.Min(fullness, 100)/100);
         if (filling && !overfull)
         {
             fullness += FILL_RATE * Time.deltaTime;
@@ -90,6 +95,7 @@ public class WaterBucketInteraction : MonoBehaviour
     // Called when dragging begins
     public void pickUp()
     {
+        Instantiate(SelectParticles, transform.position+new Vector3(0.0f,0.0f,-1f),Quaternion.Euler(0f,0f,0f));
         if (filling)
         {
             filling = false;
