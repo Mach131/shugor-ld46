@@ -36,7 +36,7 @@ public class SoundEffectHandler : MonoBehaviour
             int randomIndex = UnityEngine.Random.Range(0, soundEffectOptions.Count);
             AudioClip newEffect = soundEffectOptions[randomIndex];
 
-            soundEffectSource.PlayOneShot(newEffect);
+            soundEffectSource.PlayOneShot(newEffect, 1);
         }
     }
 }

@@ -107,6 +107,7 @@ public class BirdInteraction : MonoBehaviour
         Instantiate(birdParticle,
             transform.position + new Vector3(0f, 0f, 0f),
             Quaternion.Euler(0f, 0f, 0f));
+        SoundEffectHandler.player.playRandomNeutralSound();
         this.interactionData.birdHit();
         GameObject.Destroy(gameObject);
     }

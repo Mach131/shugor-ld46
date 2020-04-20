@@ -55,6 +55,7 @@ public class BrushInteraction : MonoBehaviour
                 currentParticle = Instantiate(BrushParticle,
                     transform.position + new Vector3(0.5f, 0.5f, -1f),
                     Quaternion.Euler(0f, 0f, 0f));
+                SoundEffectHandler.player.playRandomNeutralSound();
             }
         }
     }

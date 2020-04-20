@@ -39,6 +39,7 @@ public class WaterDrop : MonoBehaviour
         {
             petStatus.increaseConditionValue(conditionName, conditionRestoreAmount);
             petStatus.increaseNeediness(needinessIncreaseAmount);
+            SoundEffectHandler.player.playRandomNeutralSound();
             //Debug.Log("wosh");
             GameObject.Destroy(gameObject);
         }
