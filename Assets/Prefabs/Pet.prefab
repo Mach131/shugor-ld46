@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 8860134612143936269}
   - component: {fileID: 7419285674824091108}
   - component: {fileID: 796674502}
+  - component: {fileID: 74778231}
   m_Layer: 0
   m_Name: Pet
   m_TagString: Untagged
@@ -382,6 +383,14 @@ MonoBehaviour:
     unlockedInteraction: {fileID: 0}
   - needinessRequirement: 150
     unlockedInteraction: {fileID: 0}
+  - needinessRequirement: 500
+    unlockedInteraction: {fileID: 0}
+  - needinessRequirement: 1000
+    unlockedInteraction: {fileID: 0}
+  - needinessRequirement: 2000
+    unlockedInteraction: {fileID: 0}
+  - needinessRequirement: 3000
+    unlockedInteraction: {fileID: 0}
 --- !u!114 &796674502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +447,21 @@ MonoBehaviour:
     nextForms: []
   - petFormDataFile: {fileID: 4900000, guid: b1b53325de60de641bc8e8d12bfdad0b, type: 3}
     nextForms: []
+--- !u!114 &74778231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5841134311340893305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 137581a72f3a6744aa94f4c77f3cd46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {x: 0, y: -0.2, z: 0}
+  pointB: {x: 0, y: 0.3, z: 0}
+  speed: 1.5
 --- !u!1 &5841134311370170827
 GameObject:
   m_ObjectHideFlags: 0
