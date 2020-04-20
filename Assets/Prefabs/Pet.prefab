@@ -220,8 +220,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2962961, y: 2.296296, z: 0.0031349075}
-  m_Center: {x: 0, y: 0.021160638, z: -0.022728087}
+  m_Size: {x: 2.2962961, y: 1, z: 0.0031349075}
+  m_Center: {x: 0, y: -0.6, z: -0.022728087}
 --- !u!1 &5841134311121721627
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +437,7 @@ MonoBehaviour:
     nextForms: []
   - petFormDataFile: {fileID: 4900000, guid: b1b53325de60de641bc8e8d12bfdad0b, type: 3}
     nextForms: []
+  testAdvanceAtNeediness: 100
 --- !u!1 &5841134311370170827
 GameObject:
   m_ObjectHideFlags: 0
