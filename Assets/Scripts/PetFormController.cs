@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PetFormController : MonoBehaviour
 {
+    public Transform EvoParticles;
     [Serializable]
     private class PetFormData
     {
@@ -87,6 +88,7 @@ public class PetFormController : MonoBehaviour
     /// </summary>
     public void advancePetForm()
     {
+        Instantiate(EvoParticles, transform.position+new Vector3(0.0f,0.0f,-1f),Quaternion.Euler(90f,0f,0f));
         if (currentPetFormNode.nextForms.Count == 0)
         {
             return;
