@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// A way to mark objects that should be dragged around by the mouse.
 /// Also supports functions to be called on click and release, as with ClickableObject.
+/// Uses code from https://answers.unity.com/questions/566519/camerascreentoworldpoint-in-perspective.html
 /// </summary>
 public class DraggableObject : ClickableObject
 {
@@ -19,7 +20,7 @@ public class DraggableObject : ClickableObject
     void Start()
     {
         currentlyHeld = initializeAsHeld;
-        sceneCamera = FindObjectOfType<Camera>(); //might hurt performance
+        sceneCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class DraggableObject : ClickableObject
     {
         if (currentlyHeld && sceneCamera != null)
         {
-            Vector3 mousePos = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePos = mouseToWorldPosition(Input.mousePosition);
             float z = this.transform.position.z;
             this.transform.position = new Vector3(mousePos.x, mousePos.y, z);
 
@@ -36,6 +37,15 @@ public class DraggableObject : ClickableObject
                 onDragRelease();
             }
         }
+    }
+
+    private Vector3 mouseToWorldPosition(Vector3 screenPosition)
+    {
+        Ray ray = sceneCamera.ScreenPointToRay(screenPosition);
+        Plane xy = new Plane(Vector3.forward, Vector3.zero);
+        float distance;
+        xy.Raycast(ray, out distance);
+        return ray.GetPoint(distance);
     }
 
     /// <summary>

@@ -57,9 +57,10 @@ public class PetFormController : MonoBehaviour
     public List<PetFormTree> petFormDataTree;
 
     private PetFormTree currentPetFormNode;
+    private int currentPetFormIndex;
     private PetStatus petStatus;
 
-    ///* Uncomment this for testing
+    /* Uncomment this for testing
     [ContextMenuItem("Advance form", "testAdvance")]
     public float testAdvanceAtNeediness;
     public void testAdvance()
@@ -67,13 +68,14 @@ public class PetFormController : MonoBehaviour
         petStatus.increaseNeediness(testAdvanceAtNeediness - petStatus.getNeediness());
         advancePetForm();
     }
-    //*/
+    */
 
     // Start is called before the first frame update
     void Start()
     {
         petStatus = GetComponent<PetStatus>();
         currentPetFormNode = petFormDataTree[0];
+        currentPetFormIndex = 0;
         loadPetFormDataFile(currentPetFormNode.petFormDataFile);
     }
 
@@ -97,12 +99,18 @@ public class PetFormController : MonoBehaviour
             if ((minBound < 0 || current_neediness >= minBound) &&
                 (maxBound < 0 || current_neediness < maxBound))
             {
-                currentPetFormNode = petFormDataTree[branch.nextFormTreeId];
+                currentPetFormIndex = branch.nextFormTreeId;
+                currentPetFormNode = petFormDataTree[currentPetFormIndex];
                 break;
             }
         }
 
         loadPetFormDataFile(currentPetFormNode.petFormDataFile);
+    }
+
+    public int getPetFormIndex()
+    {
+        return currentPetFormIndex;
     }
 
     /// <summary>
