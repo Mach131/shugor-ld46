@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VanityInteractionController : MonoBehaviour, InteractionData
+public class VanityInteractionData : MonoBehaviour, InteractionData
 {
     public BrushInteraction brush;
 
