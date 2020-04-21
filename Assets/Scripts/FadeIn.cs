@@ -20,9 +20,5 @@ public class FadeIn : MonoBehaviour
     {
         LerpAlpha=Mathf.Lerp(LerpAlpha,-1,0.05f);
         render.material.SetColor("_Color", new Color(DarkColor.r,DarkColor.g,DarkColor.b,LerpAlpha));
-        if (LerpAlpha<-0.75f)
-        {
-        	gameObject.SetActive(false);
-        }
     }
 }
