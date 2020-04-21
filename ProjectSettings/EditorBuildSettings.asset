@@ -12,6 +12,33 @@ EditorBuildSettings:
     path: Assets/Scenes/Official/MainScene.unity
     guid: 3cf8c9db7fa87374387b36fa7c8efb9a
   - enabled: 1
-    path: Assets/Scenes/serp_EndingTest.unity
-    guid: 519f02eeefcf47746a14b73c064b8661
+    path: Assets/Scenes/Official/Endings/BlueBadEnd.unity
+    guid: 0c7e08f6fa89f0c4e846052232e59f07
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/BlueGoodEnd.unity
+    guid: 26e4c1239d4f4744aa1263be82f0b7e8
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/DeathEnd.unity
+    guid: 28997cbfb46e9f341b2aa65aa25888c3
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/FrogBadEnd.unity
+    guid: 9bcf06459c74cea4287d46decbbd0cbf
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/FrogGoodEnd.unity
+    guid: c18d7a018f1b18a4eabb9cd596e1c498
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/IceBadEnd.unity
+    guid: cfbe32b011bebb74fb274d31dfd18fb0
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/IceGoodEnd.unity
+    guid: d23c1192bbafab6458454f258d40382a
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/RockEnd.unity
+    guid: 4005786df740fe445afaaf24e01178e3
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/TeethBadEnd.unity
+    guid: 544ee2223626d2243ba2935c8b7226f5
+  - enabled: 1
+    path: Assets/Scenes/Official/Endings/TeethGoodEnd.unity
+    guid: 0b0eaabbf1dcde142b027cab391b1f6e
   m_configObjects: {}
