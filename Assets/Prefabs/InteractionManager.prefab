@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brush: {fileID: 7390498990844281739, guid: d4d251c6123000b4595b10ea984169f5, type: 3}
   conditionName: Vanity
-  valueDecay: -4
-  valueIncreasePerSecond: 20
+  valueDecay: -3
+  valueIncreasePerSecond: 25
   needinessIncreasePerSecond: 75
 --- !u!114 &2882152438068499857
 MonoBehaviour:
@@ -280,6 +280,11 @@ PrefabInstance:
       propertyPath: neediness_increase_amount
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 5319102250570491052, guid: 8b9f1e1604805724e84ee5468b3152f0,
+        type: 3}
+      propertyPath: value_decay
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 6637412857765414729, guid: 8b9f1e1604805724e84ee5468b3152f0,
         type: 3}
       propertyPath: m_Name
@@ -364,6 +369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: neediness_increase_amount
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445313559500797342, guid: 55946a1d9f6b0674da41b5436a23c95d,
+        type: 3}
+      propertyPath: value_decay
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4150944990060716707, guid: 55946a1d9f6b0674da41b5436a23c95d,
         type: 3}

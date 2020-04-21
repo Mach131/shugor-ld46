@@ -1901,6 +1901,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: hungryEndingSceneName
+      value: DeathEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[0].goodEndingSceneName
+      value: RockEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[0].badEndingSceneName
+      value: RockEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[1].goodEndingSceneName
+      value: FrogGoodEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[1].badEndingSceneName
+      value: FrogBadEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[2].goodEndingSceneName
+      value: TeethGoodEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[2].badEndingSceneName
+      value: TeethBadEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[3].goodEndingSceneName
+      value: IceGoodEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[3].badEndingSceneName
+      value: IceBadEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[4].goodEndingSceneName
+      value: BlueGoodEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783127031928983229, guid: 228bb3d5bdab406488a0bcef8371321c,
+        type: 3}
+      propertyPath: petFormEndings.Array.data[4].badEndingSceneName
+      value: BlueBadEnd
+      objectReference: {fileID: 0}
     - target: {fileID: 6783127032450428597, guid: 228bb3d5bdab406488a0bcef8371321c,
         type: 3}
       propertyPath: petFormController
