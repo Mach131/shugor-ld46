@@ -15,7 +15,7 @@ MonoBehaviour:
   brush: {fileID: 7390498990844281739, guid: d4d251c6123000b4595b10ea984169f5, type: 3}
   conditionName: Vanity
   valueDecay: -3
-  valueIncreasePerSecond: 25
+  valueIncreasePerSecond: 30
   needinessIncreasePerSecond: 75
 --- !u!114 &2882152438068499857
 MonoBehaviour:

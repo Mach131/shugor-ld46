@@ -57,7 +57,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pet: {fileID: 0}
+  gameController: {fileID: 0}
 --- !u!1 &4295819371458340180
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,8 +179,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: hungery
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ae78d4eefc4dab44ea1aefa9ac0f1229, type: 2}
+  m_sharedMaterial: {fileID: 8427788294029930052, guid: ae78d4eefc4dab44ea1aefa9ac0f1229,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
