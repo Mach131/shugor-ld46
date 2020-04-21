@@ -180,12 +180,12 @@ GameObject:
   - component: {fileID: 152876278}
   - component: {fileID: 152876277}
   - component: {fileID: 152876276}
-  - component: {fileID: 152876275}
   - component: {fileID: 152876272}
   - component: {fileID: 152876270}
   - component: {fileID: 152876273}
   - component: {fileID: 152876274}
   - component: {fileID: 152876279}
+  - component: {fileID: 152876275}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -220,7 +220,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 152876269}
   selectedCommands:
-  - {fileID: 152876270}
+  - {fileID: 152876276}
   variables: []
   description: 
   stepPause: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: It's so nice to be out of that room!
+  storyText: You know...
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: -- Good End A --
+  storyText: -- Good(?) End D --
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -395,10 +395,10 @@ MonoBehaviour:
   indentLevel: 0
   spriteRenderers:
   - {fileID: 1565783235}
-  sprite: {fileID: 21300000, guid: b021ced684116024ca707eb6c9b605fd, type: 3}
+  sprite: {fileID: 21300000, guid: 320d93aa73748b04c87e5fdafa530e6c, type: 3}
 --- !u!114 &152876275
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -408,9 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 4
+  itemId: 10
   indentLevel: 0
-  storyText: ... and ever!
+  storyText: ...
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: and ever!
+  storyText: Oh forget it
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: Let's stay together forever!
+  storyText: ...
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -786,7 +786,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5366d8b35d6d9d347aa50d0eff5fd50b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c82289c0e960d6242b0d276896f838b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

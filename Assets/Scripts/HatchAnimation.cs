@@ -47,7 +47,7 @@ public class HatchAnimation : MonoBehaviour
 	        BottomHalf.position = Vector3.Lerp(BottomHalf.position,new Vector3(0f,-5.48f,-3.3f),0.1f);
 	        Lighter.intensity=Mathf.Lerp(Lighter.intensity,160.0f,0.1f);
 	        if (hasPlayed==false) {
-        		SFXPlayer.PlayOneShot(Boom,0.7f);
+        		SFXPlayer.PlayOneShot(Boom,0.4f);
         		hasPlayed=true;
 	        }
     	}
