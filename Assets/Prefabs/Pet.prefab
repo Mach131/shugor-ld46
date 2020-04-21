@@ -362,7 +362,7 @@ MonoBehaviour:
     condition_value: 0
   current_neediness:
     condition_value: 0
-  default_hunger_rate: -2
+  default_hunger_rate: -2.5
   default_neediness_decay: -0.5
   current_conditions: []
 --- !u!114 &7419285674824091108
@@ -383,13 +383,13 @@ MonoBehaviour:
     unlockedInteraction: {fileID: 0}
   - needinessRequirement: 300
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 750
+  - needinessRequirement: 1000
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 1800
+  - needinessRequirement: 2000
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 3000
+  - needinessRequirement: 3250
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 6000
+  - needinessRequirement: 6500
     unlockedInteraction: {fileID: 0}
 --- !u!114 &796674502
 MonoBehaviour:
