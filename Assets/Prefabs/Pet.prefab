@@ -379,17 +379,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionManager: {fileID: 0}
   needinessToUnlockedInteractions:
-  - needinessRequirement: 50
+  - needinessRequirement: 25
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 150
+  - needinessRequirement: 300
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 500
+  - needinessRequirement: 750
     unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 1000
-    unlockedInteraction: {fileID: 0}
-  - needinessRequirement: 2000
+  - needinessRequirement: 1800
     unlockedInteraction: {fileID: 0}
   - needinessRequirement: 3000
+    unlockedInteraction: {fileID: 0}
+  - needinessRequirement: 6000
     unlockedInteraction: {fileID: 0}
 --- !u!114 &796674502
 MonoBehaviour:
@@ -410,12 +410,12 @@ MonoBehaviour:
   - petFormDataFile: {fileID: 4900000, guid: 356f4b600412a5c48bdb7bcf02854a88, type: 3}
     nextForms:
     - minimumNeediness: -1
-      maximumNeediness: 50
+      maximumNeediness: 25
       nextFormTreeId: 1
-    - minimumNeediness: 50
-      maximumNeediness: 300
+    - minimumNeediness: 25
+      maximumNeediness: 200
       nextFormTreeId: 3
-    - minimumNeediness: 300
+    - minimumNeediness: 200
       maximumNeediness: -1
       nextFormTreeId: 6
   - petFormDataFile: {fileID: 4900000, guid: b51408de75a5ae44e976c938be74c371, type: 3}
@@ -428,9 +428,9 @@ MonoBehaviour:
   - petFormDataFile: {fileID: 4900000, guid: 597f44c6f39af0c46a6606482eb43dc7, type: 3}
     nextForms:
     - minimumNeediness: -1
-      maximumNeediness: 500
+      maximumNeediness: 750
       nextFormTreeId: 4
-    - minimumNeediness: 500
+    - minimumNeediness: 750
       maximumNeediness: -1
       nextFormTreeId: 5
   - petFormDataFile: {fileID: 4900000, guid: e9bab213de5b3194e887f92fe7a224ae, type: 3}
@@ -440,9 +440,9 @@ MonoBehaviour:
   - petFormDataFile: {fileID: 4900000, guid: 86e02678efab3044d995ebee05a50fb9, type: 3}
     nextForms:
     - minimumNeediness: -1
-      maximumNeediness: 750
+      maximumNeediness: 2000
       nextFormTreeId: 7
-    - minimumNeediness: 750
+    - minimumNeediness: 2000
       maximumNeediness: -1
       nextFormTreeId: 8
   - petFormDataFile: {fileID: 4900000, guid: 0e71d1c91ce8a1f49b798daa9ed313a7, type: 3}

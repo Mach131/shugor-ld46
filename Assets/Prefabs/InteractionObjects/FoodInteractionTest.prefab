@@ -133,7 +133,7 @@ MonoBehaviour:
   petStatus: {fileID: 0}
   SelectParticles: {fileID: 105432454677119451, guid: 7aa134b94ab85254bb45fcd2a866f9e0,
     type: 3}
-  healthRestoreAmount: 10
+  healthRestoreAmount: 15
   needinessIncreaseAmount: 10
 --- !u!114 &190456105
 MonoBehaviour:

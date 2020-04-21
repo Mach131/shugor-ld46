@@ -16,7 +16,7 @@ MonoBehaviour:
   conditionName: Vanity
   valueDecay: -4
   valueIncreasePerSecond: 20
-  needinessIncreasePerSecond: 30
+  needinessIncreasePerSecond: 75
 --- !u!114 &2882152438068499857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   conditionName: Gaming
   valueDecay: -10
   valueIncreasePerSecond: 25
-  needinessIncreasePerSecond: 30
+  needinessIncreasePerSecond: 100
 --- !u!114 &7291236490607352003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   maxValueDecay: -10
   decayPerMiss: -2
   valueIncreaseAmount: 20
-  needinessIncreaseAmount: 20
+  needinessIncreaseAmount: 500
 --- !u!1 &8768245679510924986
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +275,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8768245679510924984}
     m_Modifications:
+    - target: {fileID: 5319102250570491052, guid: 8b9f1e1604805724e84ee5468b3152f0,
+        type: 3}
+      propertyPath: neediness_increase_amount
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 6637412857765414729, guid: 8b9f1e1604805724e84ee5468b3152f0,
         type: 3}
       propertyPath: m_Name
@@ -354,6 +359,11 @@ PrefabInstance:
         type: 3}
       propertyPath: condition_name
       value: Exercise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445313559500797342, guid: 55946a1d9f6b0674da41b5436a23c95d,
+        type: 3}
+      propertyPath: neediness_increase_amount
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4150944990060716707, guid: 55946a1d9f6b0674da41b5436a23c95d,
         type: 3}
@@ -515,6 +525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SweetsInteractionController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3560859488436074737, guid: fdad39d9389df2e41aaa6a5f7187d2c9,
+        type: 3}
+      propertyPath: needinessIncreaseAmount
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6962681378798236507, guid: fdad39d9389df2e41aaa6a5f7187d2c9,
         type: 3}
